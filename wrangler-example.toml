@@ -1,0 +1,21 @@
+name = "app-edge"
+compatibility_date = "2023-01-01"
+node_compat = true
+account_id = 'ACCOUNT_ID'
+logpush = true
+
+[limits] # add limits to cpu_ms for standard pricing to prevent bad function bugs
+cpu_ms=100
+
+[vars]
+GOOGLE_CLIENT_ID='***'
+GOOGLE_CLIENT_SECRET='***'
+AUTH_SECRET='***'
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "app"
+database_id = "***"
+migrations_dir = "./src/db/migrations"
+
+
